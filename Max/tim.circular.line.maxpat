@@ -11,7 +11,7 @@
 ,
 		"classnamespace" : "box",
 		"rect" : [ 32.0, 45.0, 1072.0, 840.0 ],
-		"bglocked" : 0,
+		"bglocked" : 1,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
@@ -451,7 +451,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 582.0, 659.5, 108.0, 87.0 ],
+					"patching_rect" : [ 582.0, 659.5, 111.0, 87.0 ],
 					"text" : "The 'old' value (red chord) is not the actual current output of [line], but the modulo around the circle ."
 				}
 
@@ -494,7 +494,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 204.5, 775.0, 594.0, 47.0 ],
+					"patching_rect" : [ 204.5, 776.0, 594.0, 47.0 ],
 					"text" : "Note: the mod() operator in the [expr] object does not support floating point numbers, so we always have to use the int() workaround. If [expr] would actually support floating point, mathematical modulo, the bottom two [expr] objects could be merged to one like so: [expr $f1%360.]. Done."
 				}
 
