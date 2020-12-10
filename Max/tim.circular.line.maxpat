@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 32.0, 45.0, 1072.0, 840.0 ],
+		"rect" : [ 32.0, 45.0, 1069.0, 885.0 ],
 		"bglocked" : 1,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,13 +40,25 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-94",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 373.0, 701.0, 46.0, 22.0 ],
+					"text" : "% 360."
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-89",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 373.0, 670.0, 156.0, 22.0 ],
-					"text" : "expr $f1-(360.*int($f1/360.))"
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 373.0, 670.0, 42.0, 22.0 ],
+					"text" : "+ 360."
 				}
 
 			}
@@ -54,11 +66,11 @@
 				"box" : 				{
 					"id" : "obj-88",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 373.0, 639.0, 186.0, 22.0 ],
-					"text" : "expr $f1-(360.*int($f1/360.))+360."
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 373.0, 639.0, 46.0, 22.0 ],
+					"text" : "% 360."
 				}
 
 			}
@@ -121,7 +133,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 448.0, 732.0, 30.0, 30.0 ]
+					"patching_rect" : [ 448.0, 763.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -261,7 +273,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 373.0, 732.0, 30.0, 30.0 ]
+					"patching_rect" : [ 373.0, 763.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -298,7 +310,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "float" ],
-					"patching_rect" : [ 373.0, 701.0, 48.0, 22.0 ],
+					"patching_rect" : [ 373.0, 732.0, 48.0, 22.0 ],
 					"text" : "t f f"
 				}
 
@@ -451,7 +463,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 582.0, 659.5, 111.0, 87.0 ],
+					"patching_rect" : [ 542.75, 639.0, 108.0, 87.0 ],
 					"text" : "The 'old' value (red chord) is not the actual current output of [line], but the modulo around the circle ."
 				}
 
@@ -466,7 +478,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 575.25, 655.5, 118.5, 97.0 ],
+					"patching_rect" : [ 536.0, 635.0, 118.5, 97.0 ],
 					"proportion" : 0.39
 				}
 
@@ -481,7 +493,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 497.0, 715.25, 148.0, 23.75 ],
+					"patching_rect" : [ 503.0, 667.25, 142.0, 24.75 ],
 					"proportion" : 0.39
 				}
 
@@ -490,12 +502,12 @@
 				"box" : 				{
 					"background" : 1,
 					"id" : "obj-104",
-					"linecount" : 3,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 204.5, 776.0, 594.0, 47.0 ],
-					"text" : "Note: the mod() operator in the [expr] object does not support floating point numbers, so we always have to use the int() workaround. If [expr] would actually support floating point, mathematical modulo, the bottom two [expr] objects could be merged to one like so: [expr $f1%360.]. Done."
+					"patching_rect" : [ 204.5, 807.0, 594.0, 60.0 ],
+					"text" : "Note: the % operator in the [expr] object does not support floating point numbers, so we always have to use the int() workaround. If [expr] would actually support floating point, mathematical modulo, the two [expr] objects could be merged to one like so: [expr ($f1%360.-$f2-$f3+540)%360.+$f2+$f3-180.]. The bottom [% ] and [+ ] objects could be merged to [expr $f1%360.]. Done."
 				}
 
 			}
@@ -508,7 +520,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 213.25, 608.0, 119.0, 127.0 ],
-					"text" : "Modulation is done in the mathematical sense. By first modulating, then adding and modulating again, we ensure that the final value is in the positive range"
+					"text" : "We need the math- ematically correct modulo. By first modulating, then adding and modulating again, we ensure that the final value is in the positive range."
 				}
 
 			}
@@ -537,7 +549,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 233.5, 634.0, 330.5, 63.0 ],
+					"patching_rect" : [ 233.5, 634.0, 196.5, 94.0 ],
 					"proportion" : 0.39
 				}
 
@@ -819,7 +831,7 @@
 				"patchline" : 				{
 					"color" : [ 0.65, 0.042531, 0.0, 1.0 ],
 					"destination" : [ "obj-11", 1 ],
-					"midpoints" : [ 411.5, 727.0, 516.5, 727.0, 516.5, 541.0, 478.5, 541.0 ],
+					"midpoints" : [ 411.5, 758.0, 516.5, 758.0, 516.5, 541.0, 478.5, 541.0 ],
 					"order" : 2,
 					"source" : [ "obj-23", 1 ]
 				}
@@ -829,7 +841,7 @@
 				"patchline" : 				{
 					"color" : [ 0.65, 0.042531, 0.0, 1.0 ],
 					"destination" : [ "obj-61", 1 ],
-					"midpoints" : [ 411.5, 727.0, 516.5, 727.0, 516.5, 478.0, 493.0, 478.0 ],
+					"midpoints" : [ 411.5, 758.0, 516.5, 758.0, 516.5, 478.0, 493.0, 478.0 ],
 					"order" : 1,
 					"source" : [ "obj-23", 1 ]
 				}
@@ -839,7 +851,7 @@
 				"patchline" : 				{
 					"color" : [ 0.65, 0.042531, 0.0, 1.0 ],
 					"destination" : [ "obj-62", 1 ],
-					"midpoints" : [ 411.5, 727.0, 516.0, 727.0, 516.0, 510.0, 502.6875, 510.0 ],
+					"midpoints" : [ 411.5, 758.0, 516.0, 758.0, 516.0, 510.0, 502.6875, 510.0 ],
 					"order" : 0,
 					"source" : [ "obj-23", 1 ]
 				}
@@ -939,8 +951,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-23", 0 ],
+					"destination" : [ "obj-94", 0 ],
 					"source" : [ "obj-89", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
+					"source" : [ "obj-94", 0 ]
 				}
 
 			}
