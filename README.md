@@ -8,4 +8,6 @@ These are “subpatches” for the programming environment “Max/MSP”. You ma
 
 Their usage and functionality should be sufficiently described in the subpatchches themselves.
 
+Alternatively, head to https://timothyschmele.com/code/circular-interpolator/ to read the article on this topic.
+
 Please report any bugs or comments, thank you!
