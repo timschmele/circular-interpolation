@@ -10,8 +10,8 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 32.0, 45.0, 1069.0, 885.0 ],
-		"bglocked" : 1,
+		"rect" : [ 64.0, 98.0, 1070.0, 824.0 ],
+		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
@@ -40,37 +40,13 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-94",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 373.0, 701.0, 46.0, 22.0 ],
-					"text" : "% 360."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-89",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
-					"patching_rect" : [ 373.0, 670.0, 42.0, 22.0 ],
-					"text" : "+ 360."
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-88",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 373.0, 639.0, 46.0, 22.0 ],
-					"text" : "% 360."
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 373.0, 639.0, 183.0, 22.0 ],
+					"text" : "expr ($f1/360-floor($f1/360))*360"
 				}
 
 			}
@@ -82,7 +58,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 373.0, 515.0, 259.375, 22.0 ],
-					"text" : "expr $f1-(int($f1/360.)*360.) +$f2+$f3-180."
+					"text" : "expr ($f1-floor($f1))*360-180.+$f2+$f3"
 				}
 
 			}
@@ -93,8 +69,8 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 373.0, 484.0, 240.0, 22.0 ],
-					"text" : "expr $f1-(int($f1/360.)*360.) -$f2-$f3+540."
+					"patching_rect" : [ 373.0, 484.0, 165.0, 22.0 ],
+					"text" : "expr ($f1-$f2+180-$f3)/360"
 				}
 
 			}
@@ -133,7 +109,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 448.0, 763.0, 30.0, 30.0 ]
+					"patching_rect" : [ 448.0, 701.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -273,7 +249,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 373.0, 763.0, 30.0, 30.0 ]
+					"patching_rect" : [ 373.0, 701.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -310,7 +286,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "float" ],
-					"patching_rect" : [ 373.0, 732.0, 48.0, 22.0 ],
+					"patching_rect" : [ 373.0, 670.0, 48.0, 22.0 ],
 					"text" : "t f f"
 				}
 
@@ -459,12 +435,12 @@
 				"box" : 				{
 					"background" : 1,
 					"id" : "obj-7",
-					"linecount" : 6,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 542.75, 639.0, 108.0, 87.0 ],
-					"text" : "The 'old' value (red chord) is not the actual current output of [line], but the modulo around the circle ."
+					"patching_rect" : [ 608.166686999999911, 577.0, 164.0, 60.0 ],
+					"text" : "The current value (red chord) is not the actual current output of [line], but the modulo around the circle."
 				}
 
 			}
@@ -472,13 +448,13 @@
 				"box" : 				{
 					"angle" : 270.0,
 					"background" : 1,
-					"bgcolor" : [ 0.94881388514913, 0.914380357193432, 0.903633514462699, 1.0 ],
+					"bgcolor" : [ 0.941176470588235, 0.811764705882353, 0.768627450980392, 1.0 ],
 					"id" : "obj-105",
 					"maxclass" : "panel",
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 536.0, 635.0, 118.5, 97.0 ],
+					"patching_rect" : [ 601.416686999999911, 571.0, 174.75, 72.0 ],
 					"proportion" : 0.39
 				}
 
@@ -487,13 +463,13 @@
 				"box" : 				{
 					"angle" : 270.0,
 					"background" : 1,
-					"bgcolor" : [ 0.94881388514913, 0.914380357193432, 0.903633514462699, 1.0 ],
+					"bgcolor" : [ 0.941176470588235, 0.811764705882353, 0.768627450980392, 1.0 ],
 					"id" : "obj-106",
 					"maxclass" : "panel",
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 503.0, 667.25, 142.0, 24.75 ],
+					"patching_rect" : [ 501.375, 592.0, 142.0, 24.75 ],
 					"proportion" : 0.39
 				}
 
@@ -506,7 +482,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 204.5, 807.0, 594.0, 60.0 ],
+					"patching_rect" : [ 204.5, 749.0, 594.0, 60.0 ],
 					"text" : "Note: the % operator in the [expr] object does not support floating point numbers, so we always have to use the int() workaround. If [expr] would actually support floating point, mathematical modulo, the two [expr] objects could be merged to one like so: [expr ($f1%360.-$f2-$f3+540)%360.+$f2+$f3-180.]. The bottom [% ] and [+ ] objects could be merged to [expr $f1%360.]. Done."
 				}
 
@@ -519,8 +495,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 213.25, 608.0, 119.0, 127.0 ],
-					"text" : "We need the math- ematically correct modulo. By first modulating, then adding and modulating again, we ensure that the final value is in the positive range."
+					"patching_rect" : [ 170.25, 608.0, 162.0, 127.0 ],
+					"text" : "This is a better example showing who to compute the mathematical modulo, than above: by normalising by the quotient, we can take the modulo of 1 (subtracting the floor) and re-multiply by the quotient to return to the original range."
 				}
 
 			}
@@ -534,7 +510,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 204.5, 604.0, 129.5, 136.0 ],
+					"patching_rect" : [ 163.125, 604.0, 170.875, 136.0 ],
 					"proportion" : 0.39
 				}
 
@@ -549,7 +525,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 233.5, 634.0, 196.5, 94.0 ],
+					"patching_rect" : [ 233.5, 634.0, 328.5, 31.0 ],
 					"proportion" : 0.39
 				}
 
@@ -562,8 +538,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 132.0, 445.5, 202.0, 141.0 ],
-					"text" : "We ramp to the new value, by first centering around the last value (i.e. $f1-$f2). By getting the modulo around this old value, we can figure out if going below or above is the shortest distance: (old_value + 180+360)%360-180. Finally, we bring the result into the normal rage (+$f2-180) and set the [line] object to ramp to the final result."
+					"patching_rect" : [ 119.25, 454.0, 212.375, 141.0 ],
+					"text" : "We ramp to the new value, by first determining the difference (i.e. $f1-$f2). The modulo of the difference between -180 and 180 is then taken: (difference+180)%360-180. Finally, we add this didference to the old value (+$f2) and set the [line] object. +$f3 is a miniscule value that shifts the interpolation direction in edge cases."
 				}
 
 			}
@@ -577,7 +553,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 123.25, 438.0, 210.75, 154.0 ],
+					"patching_rect" : [ 116.25, 448.0, 217.375, 151.0 ],
 					"proportion" : 0.39
 				}
 
@@ -592,7 +568,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 839.166686999999911, 437.5, 198.0, 136.5 ],
+					"patching_rect" : [ 839.166686999999911, 437.5, 204.0, 123.5 ],
 					"proportion" : 0.39
 				}
 
@@ -622,7 +598,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 163.125, 476.5, 448.875, 64.0 ],
+					"patching_rect" : [ 163.125, 476.5, 474.875, 65.0 ],
 					"proportion" : 0.39
 				}
 
@@ -653,7 +629,7 @@
 					"destination" : [ "obj-11", 1 ],
 					"hidden" : 1,
 					"midpoints" : [ 30.5, 541.5, 478.5, 541.5 ],
-					"order" : 2,
+					"order" : 1,
 					"source" : [ "obj-111", 0 ]
 				}
 
@@ -680,8 +656,8 @@
 				"patchline" : 				{
 					"destination" : [ "obj-61", 1 ],
 					"hidden" : 1,
-					"midpoints" : [ 30.5, 479.0, 493.0, 479.0 ],
-					"order" : 1,
+					"midpoints" : [ 30.5, 479.0, 455.5, 479.0 ],
+					"order" : 2,
 					"source" : [ "obj-111", 0 ]
 				}
 
@@ -831,17 +807,7 @@
 				"patchline" : 				{
 					"color" : [ 0.65, 0.042531, 0.0, 1.0 ],
 					"destination" : [ "obj-11", 1 ],
-					"midpoints" : [ 411.5, 758.0, 516.5, 758.0, 516.5, 541.0, 478.5, 541.0 ],
-					"order" : 2,
-					"source" : [ "obj-23", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"color" : [ 0.65, 0.042531, 0.0, 1.0 ],
-					"destination" : [ "obj-61", 1 ],
-					"midpoints" : [ 411.5, 758.0, 516.5, 758.0, 516.5, 478.0, 493.0, 478.0 ],
+					"midpoints" : [ 411.5, 696.0, 516.5, 696.0, 516.5, 541.0, 478.5, 541.0 ],
 					"order" : 1,
 					"source" : [ "obj-23", 1 ]
 				}
@@ -850,8 +816,18 @@
 , 			{
 				"patchline" : 				{
 					"color" : [ 0.65, 0.042531, 0.0, 1.0 ],
+					"destination" : [ "obj-61", 1 ],
+					"midpoints" : [ 411.5, 696.0, 516.5, 696.0, 516.5, 478.0, 455.5, 478.0 ],
+					"order" : 2,
+					"source" : [ "obj-23", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"color" : [ 0.65, 0.042531, 0.0, 1.0 ],
 					"destination" : [ "obj-62", 1 ],
-					"midpoints" : [ 411.5, 758.0, 516.0, 758.0, 516.0, 510.0, 502.6875, 510.0 ],
+					"midpoints" : [ 411.5, 696.0, 516.0, 696.0, 516.0, 510.0, 502.6875, 510.0 ],
 					"order" : 0,
 					"source" : [ "obj-23", 1 ]
 				}
@@ -921,7 +897,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-61", 2 ],
-					"midpoints" : [ 622.875, 479.0, 603.5, 479.0 ],
+					"midpoints" : [ 622.875, 479.0, 528.5, 479.0 ],
 					"order" : 1,
 					"source" : [ "obj-78", 0 ]
 				}
@@ -944,22 +920,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-89", 0 ],
-					"source" : [ "obj-88", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-94", 0 ],
-					"source" : [ "obj-89", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-23", 0 ],
-					"source" : [ "obj-94", 0 ]
+					"source" : [ "obj-88", 0 ]
 				}
 
 			}
